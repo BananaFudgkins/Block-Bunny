@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="8" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="blocks" tilewidth="32" tileheight="32">
+  <image source="blocks.png" width="96" height="32"/>
+ </tileset>
+ <layer name="red" width="40" height="8">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjALaAMZBzgYACXwADw==
+  </data>
+ </layer>
+ <layer name="green" width="40" height="8">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjALaAaZBzAYADYgAGw==
+  </data>
+ </layer>
+ <layer name="blue" width="40" height="8">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjALaAuZBygYAETAAKA==
+  </data>
+ </layer>
+ <objectgroup name="spikes">
+  <object x="241" y="128">
+   <ellipse/>
+  </object>
+  <object x="392" y="144">
+   <ellipse/>
+  </object>
+  <object x="552" y="116">
+   <ellipse/>
+  </object>
+  <object x="668" y="147">
+   <ellipse/>
+  </object>
+  <object x="789" y="125">
+   <ellipse/>
+  </object>
+  <object x="890" y="155">
+   <ellipse/>
+  </object>
+  <object x="965" y="122">
+   <ellipse/>
+  </object>
+  <object x="1061" y="159">
+   <ellipse/>
+  </object>
+  <object x="1153" y="135">
+   <ellipse/>
+  </object>
+  <object x="1228" y="167">
+   <ellipse/>
+  </object>
+  <object x="64" y="95">
+   <ellipse/>
+  </object>
+  <object x="144" y="129">
+   <ellipse/>
+  </object>
+ </objectgroup>
+ <objectgroup name="crystals">
+  <object x="147" y="168">
+   <ellipse/>
+  </object>
+  <object x="241" y="157">
+   <ellipse/>
+  </object>
+  <object x="393" y="169">
+   <ellipse/>
+  </object>
+  <object x="556" y="141">
+   <ellipse/>
+  </object>
+  <object x="672" y="175">
+   <ellipse/>
+  </object>
+  <object x="64" y="126">
+   <ellipse/>
+  </object>
+  <object x="789" y="145">
+   <ellipse/>
+  </object>
+  <object x="893" y="178">
+   <ellipse/>
+  </object>
+  <object x="967" y="146">
+   <ellipse/>
+  </object>
+  <object x="1059" y="184">
+   <ellipse/>
+  </object>
+  <object x="1156" y="159">
+   <ellipse/>
+  </object>
+  <object x="1228" y="189">
+   <ellipse/>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="8" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="blocks" tilewidth="32" tileheight="32">
+  <image source="blocks.png" width="96" height="32"/>
+ </tileset>
+ <layer name="red" width="40" height="8">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AU4AOMaJgSc7CxhzPA5k9y/E5Nc5AxABFkAA8=
+  </data>
+ </layer>
+ <layer name="green" width="40" height="8">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUkAOYcLAHypyhBLD5kxy/U2oOABSgABE=
+  </data>
+ </layer>
+ <layer name="blue" width="40" height="8">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUUBMw42APlDlDCWDzJzl+J9YcABowABk=
+  </data>
+ </layer>
+ <objectgroup name="crystals">
+  <object x="192" y="192">
+   <ellipse/>
+  </object>
+  <object x="386" y="191">
+   <ellipse/>
+  </object>
+  <object x="577" y="191">
+   <ellipse/>
+  </object>
+  <object x="770" y="191">
+   <ellipse/>
+  </object>
+  <object x="962" y="191">
+   <ellipse/>
+  </object>
+  <object x="1202" y="189">
+   <ellipse/>
+  </object>
+ </objectgroup>
+</map>
