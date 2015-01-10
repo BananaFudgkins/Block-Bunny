@@ -55,6 +55,8 @@ public class LevelSelect extends GameState {
 		
 		createTileBodies();
 		
+		
+		
 	}
 	
 	private void createTileBodies() {
@@ -135,9 +137,6 @@ public class LevelSelect extends GameState {
 		rightarrowButton.render(sb);
 		
 		leftarrowButton.render(sb);
-		
-		// draw character selection
-		sb.draw(animation.getFrame(), 146, 100);
 		
 	}
 	
