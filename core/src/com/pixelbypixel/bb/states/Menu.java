@@ -2,29 +2,16 @@ package com.pixelbypixel.bb.states;
 
 import static com.pixelbypixel.bb.handlers.B2DVars.PPM;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.FixtureDef;
-import com.badlogic.gdx.physics.box2d.PolygonShape;
-import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import com.pixelbypixel.bb.Game;
 import com.pixelbypixel.bb.entities.B2DSprite;
-import com.pixelbypixel.bb.handlers.Animation;
-import com.pixelbypixel.bb.handlers.B2DVars;
-import com.pixelbypixel.bb.handlers.Background;
-import com.pixelbypixel.bb.handlers.GameButton;
-import com.pixelbypixel.bb.handlers.GameStateManager;
+import com.pixelbypixel.bb.handlers.*;
 
 public class Menu extends GameState {
 	
@@ -34,9 +21,7 @@ public class Menu extends GameState {
 	private Animation animation;
 	private GameButton playButton;
 	private GameButton musictoggle;
-	private GameButton gamecenter;
-	
-	private BitmapFont font;
+	private GameButton info;
 	
 	private World world;
 	private Box2DDebugRenderer b2dRenderer;
@@ -45,7 +30,6 @@ public class Menu extends GameState {
 	private int tapped;
 	private Texture tex;
 	
-	@SuppressWarnings("deprecation")
 	public Menu(GameStateManager gsm) {
 		
 		super(gsm);
@@ -70,15 +54,12 @@ public class Menu extends GameState {
 		//world = new World(new Vector2(0, 0), true);
 		b2dRenderer = new Box2DDebugRenderer();
 		
-		FreeTypeFontGenerator gen = new FreeTypeFontGenerator(Gdx.files.internal("fonts/ASCII.ttf"));
-		font = gen.generateFont(12);
-		
 		createTitleBodies();
 		tex = Game.res.getTexture("musicon");
 		musictoggle = new GameButton(new TextureRegion(tex, 0, 0, 30, 30), 290, 50, cam);
 		
-		tex = Game.res.getTexture("game-center");
-		gamecenter = new GameButton(new TextureRegion(tex, 0, 0, 30, 30), 255, 50, cam);
+		tex = Game.res.getTexture("info");
+		info = new GameButton(new TextureRegion(tex, 0, 0, 32, 32), 255, 50, cam);
 		
 		tapped = 1;
 		
@@ -191,7 +172,7 @@ public class Menu extends GameState {
 		// play button input
 		if(playButton.isClicked()) {
 			Game.res.getSound("crystal").play();
-			gsm.setState(GameStateManager.LEVEL_SELECT);
+			gsm.setState(GameStateManager.GAMEMODE_SELECT);
 		}
 		
 		// music toggle input
@@ -208,8 +189,9 @@ public class Menu extends GameState {
 			}
 		}
 		
-		if(gamecenter.isClicked()) {
-			// bring up game center stuff
+		if(info.isClicked()) {
+			Game.res.getSound("crystal").play();
+			gsm.setState(GameStateManager.CREDITS);
 		}
 		
 	}
@@ -228,7 +210,7 @@ public class Menu extends GameState {
 		
 		musictoggle.update(dt);
 		
-		gamecenter.update(dt);
+		info.update(dt);
 		
 	}
 	
@@ -245,20 +227,15 @@ public class Menu extends GameState {
 		// draw button
 		playButton.render(sb);
 		
+		// draw credits button
+		info.render(sb);
+		
 		// draw gamecenter button
-		gamecenter.render(sb);
+		//gamecenter.render(sb);
 		
 		// draw bunny
 		sb.begin();
 		sb.draw(animation.getFrame(), 146, 31);
-		sb.end();
-		
-		// tell people what to do
-		sb.begin();
-		font.setColor(Color.BLUE);
-		font.draw(sb, "If you can't hear", 2, 90);
-		font.draw(sb, "any sound tap the", 2, 75);
-		font.draw(sb, "music icon", 25, 60);
 		sb.end();
 		
 		// debug draw box2d

@@ -5,92 +5,50 @@
  </tileset>
  <layer name="red" width="40" height="8">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjALaAMZBzgYACXwADw==
+   eJxjYBgFQx0womFa2zWYwUh1H3oaGOzhMFgAAB5YAA0=
   </data>
  </layer>
  <layer name="green" width="40" height="8">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjALaAaZBzAYADYgAGw==
+   eJxjYBgFIxEwDbQDCAB09zFhwbS2H58dTGg0uebTyz+jADsAAESoACE=
   </data>
  </layer>
  <layer name="blue" width="40" height="8">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjALaAuZBygYAETAAKA==
+   eJxjYBiegHmgHUAAjLpvYAAzGh7pAD08RlqYAABLyAAl
   </data>
  </layer>
- <objectgroup name="spikes">
-  <object x="241" y="128">
+ <objectgroup name="crystals">
+  <object x="157" y="174">
    <ellipse/>
   </object>
-  <object x="392" y="144">
+  <object x="353" y="98">
    <ellipse/>
   </object>
-  <object x="552" y="116">
+  <object x="554" y="130">
    <ellipse/>
   </object>
-  <object x="668" y="147">
+  <object x="779" y="111">
    <ellipse/>
   </object>
-  <object x="789" y="125">
+  <object x="964" y="107">
    <ellipse/>
   </object>
-  <object x="890" y="155">
+  <object x="1122" y="40">
    <ellipse/>
   </object>
-  <object x="965" y="122">
-   <ellipse/>
-  </object>
-  <object x="1061" y="159">
-   <ellipse/>
-  </object>
-  <object x="1153" y="135">
-   <ellipse/>
-  </object>
-  <object x="1228" y="167">
-   <ellipse/>
-  </object>
-  <object x="64" y="95">
-   <ellipse/>
-  </object>
-  <object x="144" y="129">
+  <object x="1246" y="98">
    <ellipse/>
   </object>
  </objectgroup>
- <objectgroup name="crystals">
-  <object x="147" y="168">
+ <objectgroup name="spikes">
+  <object x="611" y="163">
    <ellipse/>
   </object>
-  <object x="241" y="157">
+  <object x="412" y="62">
    <ellipse/>
   </object>
-  <object x="393" y="169">
-   <ellipse/>
-  </object>
-  <object x="556" y="141">
-   <ellipse/>
-  </object>
-  <object x="672" y="175">
-   <ellipse/>
-  </object>
-  <object x="64" y="126">
-   <ellipse/>
-  </object>
-  <object x="789" y="145">
-   <ellipse/>
-  </object>
-  <object x="893" y="178">
-   <ellipse/>
-  </object>
-  <object x="967" y="146">
-   <ellipse/>
-  </object>
-  <object x="1059" y="184">
-   <ellipse/>
-  </object>
-  <object x="1156" y="159">
-   <ellipse/>
-  </object>
-  <object x="1228" y="189">
+  <object x="1209" y="84">
    <ellipse/>
   </object>
  </objectgroup>

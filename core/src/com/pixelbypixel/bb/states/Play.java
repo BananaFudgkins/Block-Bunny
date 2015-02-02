@@ -3,20 +3,33 @@ package com.pixelbypixel.bb.states;
 import static com.pixelbypixel.bb.handlers.B2DVars.PPM;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;
-import com.badlogic.gdx.maps.tiled.*;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 import com.badlogic.gdx.utils.Array;
-import com.pixelbypixel.bb.entities.*;
-import com.pixelbypixel.bb.handlers.*;
 import com.pixelbypixel.bb.Game;
+import com.pixelbypixel.bb.entities.Crystal;
+import com.pixelbypixel.bb.entities.HUD;
+import com.pixelbypixel.bb.entities.Player;
+import com.pixelbypixel.bb.entities.Spike;
+import com.pixelbypixel.bb.handlers.B2DVars;
+import com.pixelbypixel.bb.handlers.BBContactListener;
+import com.pixelbypixel.bb.handlers.BBInput;
+import com.pixelbypixel.bb.handlers.Background;
+import com.pixelbypixel.bb.handlers.BoundedCamera;
+import com.pixelbypixel.bb.handlers.GameStateManager;
 
 public class Play extends GameState {
 	
@@ -43,6 +56,9 @@ public class Play extends GameState {
 	
 	public static int level;
 	
+	private BitmapFont font;
+	
+	@SuppressWarnings("deprecation")
 	public Play(GameStateManager gsm) {
 		
 		super(gsm);
@@ -84,6 +100,9 @@ public class Play extends GameState {
 		b2dCam = new BoundedCamera();
 		b2dCam.setToOrtho(false, Game.V_WIDTH / PPM, Game.V_HEIGHT / PPM);
 		b2dCam.setBounds(0, (tileMapWidth * tileSize) / PPM, 0, (tileMapHeight * tileSize) / PPM);
+		
+		FreeTypeFontGenerator gen = new FreeTypeFontGenerator(Gdx.files.internal("fonts/ASCII.ttf"));
+		font = gen.generateFont(12);
 		
 	}
 	
@@ -389,25 +408,25 @@ public class Play extends GameState {
 		// check player win
 		if(player.getBody().getPosition().x * PPM > tileMapWidth * tileSize) {
 			Game.res.getSound("levelselect").play();
-			if(level >= 26) {
-				gsm.setState(GameStateManager.LEVEL_SELECT2);
+			if(level <= 25) {
+				gsm.setState(GameStateManager.LEVEL_SELECT);
 			} else {
-			gsm.setState(GameStateManager.LEVEL_SELECT);
+				gsm.setState(GameStateManager.LEVEL_SELECT2);
 			}
 		}
 		
 		// check player failed
 		if(player.getBody().getPosition().y < 0) {
 			Game.res.getSound("hit").play();
-			gsm.setState(GameStateManager.MENU);
+			gsm.setState(GameStateManager.RESTART);
 		}
 		if(player.getBody().getLinearVelocity().x < 0.001f) {
 			Game.res.getSound("hit").play();
-			gsm.setState(GameStateManager.MENU);
+			gsm.setState(GameStateManager.RESTART);
 		}
 		if(cl.isPlayerDead()) {
 			Game.res.getSound("hit").play();
-			gsm.setState(GameStateManager.MENU);
+			gsm.setState(GameStateManager.RESTART);
 		}
 		
 		// update crystals
@@ -452,6 +471,33 @@ public class Play extends GameState {
 			spikes.get(i).render(sb);
 		}
 		
+		if(level == 1) {
+			sb.begin();
+			font.setColor(Color.YELLOW);
+			font.draw(sb, "tap the right half of the screen to jump", 100, 100);
+			font.draw(sb, "tap the left to change color", 1000, 100);
+			font.draw(sb, "color order is", 1200, 140);
+			font.setColor(Color.RED);
+			font.draw(sb, "red", 1150, 140);
+			font.setColor(Color.GREEN);
+			font.draw(sb, "green", 1320, 140);
+			font.setColor(Color.YELLOW);
+			font.draw(sb, "and", 1620, 140);
+			font.setColor(Color.NAVY);
+			font.draw(sb, "blue", 1800, 190);
+			font.setColor(Color.YELLOW);
+			font.draw(sb, "of course there are", 2200, 100);
+			font.draw(sb, "crystals to collect", 2250, 80);
+			sb.end();
+		}
+		
+		if(level == 3) {
+			sb.begin();
+			font.setColor(Color.YELLOW);
+			font.draw(sb, "try to avoid spikes", 80, 120);
+			sb.end();
+		}
+		
 		// draw hud
 		sb.setProjectionMatrix(hudCam.combined);
 		hud.render(sb);
@@ -464,6 +510,8 @@ public class Play extends GameState {
 		}
 		
 	}
+	
+	public int getCurrentLevel() { return level; }
 	
 	public void dispose() {
 		// everything is in the resource manager com.neet.blockbunny.handlers.Content

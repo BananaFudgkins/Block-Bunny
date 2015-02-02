@@ -15,6 +15,10 @@ public class GameStateManager {
 	public static final int PLAY = 388031654;
 	public static final int LEVEL_SELECT = -9238732;
 	public static final int LEVEL_SELECT2 = 90;
+	public static final int GAMEMODE_SELECT = 1000;
+	public static final int CREDITS = 76453;
+	public static final int ENDLESS = 010101010;
+	public static final int RESTART = 99999999;
 	
 	public GameStateManager(Game game) {
 		this.game = game;
@@ -37,6 +41,9 @@ public class GameStateManager {
 		if(state == PLAY) return new Play(this);
 		if(state == LEVEL_SELECT) return new LevelSelect(this);
 		if(state == LEVEL_SELECT2) return new LevelSelect2(this);
+		if(state == GAMEMODE_SELECT) return new GameModeSelect(this);
+		if(state == CREDITS) return new Credits(this);
+		if(state == RESTART) return new RestartScreen(this);
 		return null;
 	}
 	

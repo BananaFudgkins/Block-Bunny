@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="40" height="8" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="8" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="blocks" tilewidth="32" tileheight="32">
   <image source="blocks.png" width="96" height="32"/>
  </tileset>
  <layer name="red" width="40" height="8">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFowACGAfaAVjAYHQTITAQbmbEgkcBYQAAEfAACQ==
+   eJxjYBgFo2DkAkY0PBwAIw72QILB4g50AAAPzAAI
   </data>
  </layer>
  <layer name="green" width="40" height="8">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFowA7YBpoB9AZMGHBo2B4AwAeAAAN
+   eJxjYBgFMMCEhgcbINZN9PQDvcJssMfNKBiaAABmaAAh
   </data>
  </layer>
  <layer name="blue" width="40" height="8">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4B0wEwjtZQCdLuYiWDTA9DbvlFAHAAAMzgAFg==
+   eJxjYBgFo2AU0AMw42APJBgs7hgoAAARVAAK
   </data>
  </layer>
- <objectgroup name="crystals" width="40" height="8">
-  <object x="115" y="177">
+ <objectgroup name="crystals">
+  <object x="233" y="158">
    <ellipse/>
   </object>
-  <object x="271" y="115">
+  <object x="421" y="95">
    <ellipse/>
   </object>
-  <object x="368" y="83">
+  <object x="574" y="154">
    <ellipse/>
   </object>
-  <object x="784" y="89">
+  <object x="816" y="80">
    <ellipse/>
   </object>
-  <object x="210" y="178">
+  <object x="1053" y="79">
+   <ellipse/>
+  </object>
+  <object x="1239" y="31">
    <ellipse/>
   </object>
  </objectgroup>
- <objectgroup name="spikes" width="40" height="8">
-  <object x="541" y="178">
+ <objectgroup name="spikes">
+  <object x="944" y="19">
    <ellipse/>
   </object>
-  <object x="541" y="141">
-   <ellipse/>
-  </object>
-  <object x="407" y="137">
+  <object x="1094" y="110">
    <ellipse/>
   </object>
  </objectgroup>

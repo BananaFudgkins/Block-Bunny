@@ -12,7 +12,6 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.pixelbypixel.bb.Game;
-import com.pixelbypixel.bb.handlers.Animation;
 import com.pixelbypixel.bb.handlers.B2DVars;
 import com.pixelbypixel.bb.handlers.GameButton;
 import com.pixelbypixel.bb.handlers.GameStateManager;
@@ -24,7 +23,6 @@ public class LevelSelect extends GameState {
 	private GameButton[][] buttons;
 	private GameButton rightarrowButton;
 	private GameButton leftarrowButton;
-	private Animation animation;
 	
 	private World world;
 	
@@ -91,7 +89,7 @@ public class LevelSelect extends GameState {
 	
 	public void handleInput() {
 		if(rightarrowButton.isClicked()) gsm.setState(GameStateManager.LEVEL_SELECT2);
-		if(leftarrowButton.isClicked()) gsm.setState(GameStateManager.MENU);
+		if(leftarrowButton.isClicked()) gsm.setState(GameStateManager.GAMEMODE_SELECT);
 	}
 	
 	public void update(float dt) {

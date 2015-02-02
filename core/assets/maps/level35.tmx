@@ -5,53 +5,41 @@
  </tileset>
  <layer name="red" width="40" height="8">
   <data encoding="base64" compression="zlib">
-   eJxjYBgcgHGgHUAAjLqPNMCIBQ9lMNz8MwogAAAmuAAO
+   eJxjYBgFww0wIuHBBihxEyMOTC2Az6yBDkty7aeHu0m1Y6DDEhkAACZQABE=
   </data>
  </layer>
  <layer name="green" width="40" height="8">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFAwmYBtoBBMCo+2gLmLBgUtSPAsoAAC9AABk=
+   eJxjYBh+gGmgHUAAjLpvFIyCwQEAGkgABw==
   </data>
  </layer>
  <layer name="blue" width="40" height="8">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUUBMwo+HBBgabm9DDC5v7iFFDDgAAJ2gALg==
+   eJxjYBgFQxEwD7QDBjHAFTajYYYbjNQwAwAhIAAQ
   </data>
  </layer>
  <objectgroup name="crystals">
-  <object x="291" y="174">
+  <object x="230" y="165">
    <ellipse/>
   </object>
-  <object x="661" y="209">
+  <object x="528" y="109">
    <ellipse/>
   </object>
-  <object x="896" y="128">
+  <object x="753" y="170">
    <ellipse/>
   </object>
-  <object x="585" y="166">
+  <object x="977" y="49">
    <ellipse/>
   </object>
-  <object x="197" y="114">
-   <ellipse/>
-  </object>
-  <object x="1246" y="113">
+  <object x="1265" y="50">
    <ellipse/>
   </object>
  </objectgroup>
  <objectgroup name="spikes">
-  <object x="740" y="125">
+  <object x="471" y="70">
    <ellipse/>
   </object>
-  <object x="1010" y="48">
-   <ellipse/>
-  </object>
-  <object x="1185" y="12">
-   <ellipse/>
-  </object>
-  <object x="1185" y="47">
-   <ellipse/>
-  </object>
-  <object x="1185" y="81">
+  <object x="928" y="93">
    <ellipse/>
   </object>
  </objectgroup>

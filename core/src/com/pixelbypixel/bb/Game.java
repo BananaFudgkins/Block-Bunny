@@ -37,11 +37,14 @@ public class Game implements ApplicationListener {
 		res.loadTexture("images/bunny.png");
 		res.loadTexture("images/crystal.png");
 		res.loadTexture("images/spikes.png");
-		res.loadTexture("images/game-center.png");
 		res.loadTexture("images/arrowright.png");
 		res.loadTexture("images/arrowleft.png");
 		res.loadTexture("images/musicon.png");
 		res.loadTexture("images/musicoff.png");
+		res.loadTexture("images/EndlessMode.png");
+		res.loadTexture("images/info.png");
+		res.loadTexture("images/restart.png");
+		res.loadTexture("images/nextlevel.png");
 		
 		res.loadSound("sfx/jump.wav");
 		res.loadSound("sfx/crystal.wav");
